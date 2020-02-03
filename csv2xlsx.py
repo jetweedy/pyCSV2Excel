@@ -22,7 +22,7 @@ for idx, df in enumerate(df_from_each_file):
 	df.to_excel(writer, sheet_name='Sheet {0}'.format(idx), index=False, encoding='utf-8')
 writer.save()
 
-"""
+
 
 book = load_workbook('result.xlsx')
 for i in range(2, book["Sheet 0"].max_row+1):
@@ -39,6 +39,5 @@ book["Sheet 0"].column_dimensions['F'].width = 100
 
 book.save('result.xlsx')
 
-"""
 
 
