@@ -31,20 +31,19 @@ if (len(sys.argv) > 1):
 	writer.save()
 
 
+### Below is code demonstrating how to do some more dynamic cell creation
+"""
+book = load_workbook('result.xlsx')
+for i in range(2, book["Sheet 0"].max_row+1):
+#	print(".");
+	book["Sheet 0"]['C'+str(i)] = i
+	book["Sheet 0"]['D'+str(i)] = i+1
+	book["Sheet 0"]['E'+str(i)] = '=SUM(C'+str(i)+',D'+str(i)+')'
 
-	book = load_workbook('result.xlsx')
-	for i in range(2, book["Sheet 0"].max_row+1):
-	#	print(".");
-		book["Sheet 0"]['C'+str(i)] = i
-		book["Sheet 0"]['D'+str(i)] = i+1
-		book["Sheet 0"]['E'+str(i)] = '=SUM(C'+str(i)+',D'+str(i)+')'
-
-	dv = DataValidation(type="list", formula1='"Dog,Cat,Bat"', allow_blank=True)
-	book["Sheet 0"].add_data_validation(dv)
-	dv.add('F2:F'+str(book["Sheet 0"].max_row+1));
-
-	book["Sheet 0"].column_dimensions['F'].width = 100
-
-	book.save('result.xlsx')
-
+dv = DataValidation(type="list", formula1='"Dog,Cat,Bat"', allow_blank=True)
+book["Sheet 0"].add_data_validation(dv)
+dv.add('F2:F'+str(book["Sheet 0"].max_row+1));
+book["Sheet 0"].column_dimensions['F'].width = 100
+book.save('result.xlsx')
+"""
 
