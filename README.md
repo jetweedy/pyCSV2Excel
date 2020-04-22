@@ -1,5 +1,13 @@
 # pyCSV2Excel
 
+## Installation
+
+1. Install Python 3.6 or higher
+2. Then install necessary modules:
+ ```
+ python3 -m pip install xlsxwriter openpyxl pandas
+ ```
+
 ## Command Line Usage
 
 ### Convert multiple CSV files to a single XLSX with tabs:
