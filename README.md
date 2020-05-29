@@ -13,7 +13,7 @@
 ### Convert multiple CSV files to a single XLSX with tabs:
 
 ```
- python3 csv2xlsx.py targetfile.xlsx sourcefile1 sourcefile2 etc
+ python3 csv2xlsx.py targetfile.xlsx sourcefile1 sourcefile2 --tabnames"Tab 1|Tab B"
 ```
 
 ### Password-protect an XLSX file:
